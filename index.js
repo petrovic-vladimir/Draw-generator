@@ -1,5 +1,5 @@
 const readlineSync = require("readline-sync");
-
+const { drawGenerator } = require("./modules/draw-generator");
 const main = () => {
   const N = readlineSync.question("Unesite broj tenisera (N):");
 
@@ -34,6 +34,10 @@ const main = () => {
     ...Good Luck and Happy Coding...
 
   */
-};
 
+  
+ const draw = drawGenerator(tennisPlayers);
+ console.log(draw);
+ 
+}
 main();
