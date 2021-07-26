@@ -1,0 +1,99 @@
+{
+    "player01":{
+        "firstName": "Novak",
+        "lastName": "Djoković",
+        "country": "Srbija",
+        "ranking": "1"
+    },
+    "player02":{
+        "firstName": "Rodžer",
+        "lastName": "Federer",
+        "country": "Švajcarska",
+        "ranking": "9"
+    },
+    "player03":{
+        "firstName": "Rafael",
+        "lastName": "Nadal",
+        "country": "Španija",
+        "ranking": "3"
+    },
+    "player04":{
+        "firstName": "Daniil",
+        "lastName": "Medvedev",
+        "country": "Rusija",
+        "ranking": "2"
+    },
+    "player05":{
+        "firstName": "Stefanos",
+        "lastName": "Tsitsipas",
+        "country": "Grčka",
+        "ranking": "4"
+    },
+    "player06":{
+        "firstName": "Alexander",
+        "lastName": "Zverev",
+        "country": "Nemačka",
+        "ranking": "5"
+    },
+    "player07":{
+        "firstName": "Dominik",
+        "lastName": "Thiem",
+        "country": "Austria",
+        "ranking": "6"
+    },
+    "player08":{
+        "firstName": "Matteo",
+        "lastName": "Berrettini",
+        "country": "Italija",
+        "ranking": "8"
+    },
+    "player09":{
+        "firstName": "Gael",
+        "lastName": "Monfils",
+        "country": "Francuska",
+        "ranking": "17"
+    },
+    "player10":{
+        "firstName": "Denis",
+        "lastName": "Shapalov",
+        "country": "Kanada",
+        "ranking": "10"
+    },
+    "player11":{
+        "firstName": "Pablo",
+        "lastName": "Busta",
+        "country": "Španija",
+        "ranking": "11"
+    },
+    "player12":{
+        "firstName": "Diego",
+        "lastName": "Schwartzman",
+        "country": "Argentina",
+        "ranking": "13"
+    },
+    "player13":{
+        "firstName": "Hubert",
+        "lastName": "Hurkacz",
+        "country": "Poljska",
+        "ranking": "12"
+    },
+    "player14":{
+        "firstName": "Aslan",
+        "lastName": "Karatsev",
+        "country": "Rusija",
+        "ranking": "24"
+    },
+    "player15":{
+        "firstName": "Daniel",
+        "lastName": "Evans",
+        "country": "Engleska",
+        "ranking": "27"
+    },
+    "player16":{
+        "firstName": "Stan",
+        "lastName": "Wawrinka",
+        "country": "Švajcarska",
+        "ranking": "30"
+    }
+    
+}
