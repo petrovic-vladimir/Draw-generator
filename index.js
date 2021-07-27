@@ -1,3 +1,12 @@
+/*
+
+Type manual in user input to set tennis players by own.
+Every input will go through validation.
+Rounds will be generated while players length > 2
+All matches will be simulated.
+
+*/
+
 const readlineSync = require("readline-sync");
 
 // load local modules
@@ -22,6 +31,7 @@ const main = () => {
       const tempTennisPlayer = readlineSync.question(questions.inputPlayers);
       const tempTennisPlayerData = tempTennisPlayer.split(",");
       let ranking = parseInt(tempTennisPlayerData[3]);
+
       // Checking user input (ranking) is it a number
       if(Number.isNaN(ranking) || ranking === 0){
         console.log(errors.rankError);
@@ -61,7 +71,6 @@ const main = () => {
   // sorting by ranking
   let temp_rankSorted_Players = [...tennisPlayers].sort((a,b)=>b.ranking > a.ranking ? 1 :-1);
 
-  // console.log(tennisPlayers.length); // delete
   // devide players in 2 group stages
   let groupStageA = [];
   let groupStageB = [];
@@ -83,30 +92,42 @@ const main = () => {
     round.generate(groupStageB,round.groupStageB_opponents);
     // print output rounds
     printRound(roundNumber,round.getNumOfMatches());
+  
+    let roundResult = round.simulator();
+
     // print output matches
     printMatches([round.groupStageA_opponents,round.groupStageB_opponents]);
-  
-    let roundResult = round.matchSimulator();
-    // console.log(roundResult);
     
-    groupStageA = roundResult.groupStageA_winners;
-    groupStageB = roundResult.groupStageB_winners;
+    let groupStageA_winners = [];
+    let groupStageB_winners = [];
     
-      // print output winners of current round
-    for (const groupStage of Object.values(roundResult)) {
-      for (const winner of groupStage) {
-        console.log(`${winner.lastName} won ${getResult()}`);
-      }
+    for (const winner of roundResult.groupStageA_winners) {
+      groupStageA_winners.push(winner.winner);
+      console.log(`${winner.winner.lastName} won ${winner.result}`);
     }
+    for (const winner of roundResult.groupStageB_winners) {
+      groupStageB_winners.push(winner.winner);
+      console.log(`${winner.winner.lastName} won ${winner.result}`);
+    }
+    // printWinners();
+    groupStageA =groupStageA_winners;
+    groupStageB = groupStageB_winners;
+    
     roundNumber++;
   }
 
+  // sorry for spaggeti code :(
   // simulate and print finale
   console.log(textColors.FgRed,'FINAL:');
-  let finalists = [[groupStageA.concat(groupStageB)]];
-  printMatches(finalists);
-  console.log(getResult());
+  let finalists = [groupStageA.concat(groupStageB)];
+  printMatches([finalists]);
+  let winner = finalists[0][Math.round(Math.random()*1)];
+  console.log(textColors.FgYellow,`${winner.firstName[0]}.${winner.lastName} won ${getResult()}`);
 
+  console.log(textColors.FgRed,`WINNER:\n!!! ${winner.firstName[0]}.${winner.lastName} (${winner.country}, ${winner.ranking})) !!!`);
 }
 
 main();
+
+
+// Maybe this is not best way how to do this project, i will gain more experience for better code :)

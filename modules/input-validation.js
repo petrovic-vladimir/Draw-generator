@@ -24,7 +24,6 @@ exports.emptyInput = function(players){
     }
     return false; 
 }
-
 exports.numOfPlayers = function(N){
    
     if(N.match(/^[0-9]+$/) === null){
@@ -42,4 +41,4 @@ exports.numOfPlayers = function(N){
     }
 
     return true;
- }
+}
